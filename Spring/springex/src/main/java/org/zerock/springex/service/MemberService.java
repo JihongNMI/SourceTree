@@ -4,6 +4,5 @@ import org.zerock.springex.dto.MemberDTO;
 
 public interface MemberService {
     MemberDTO login(MemberDTO dto);
-
-    boolean register(MemberDTO dto);
+    void joinMember(MemberDTO dto);
 }

@@ -29,24 +29,17 @@
                             <input type="password" name="pw"
                                    class="form-control" placeholder="비밀번호"/>
                         </div>
-
                         <div class="input-group mb-3">
-                            <span class="input-group-text">이메일</span>
+                            <span class="input-group-text">Email</span>
                             <input type="text" name="emailId"
-                                   class="form-control" placeholder="이메일"/>
-                        </div>
-
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">이메일주소</span>
+                                   class="form-control" placeholder="아이디"/>
+                            @
                             <input type="text" name="emailAddress"
-                                   class="form-control" placeholder="이메일주소"/>
+                                   class="form-control" placeholder="메일주소"/>
                         </div>
-
-
-
                         <div class="my-4">
                             <div class="float-end">
-                                <button type="submit" class="btn btn-primary">가입</button>
+                                <button type="submit" class="btn btn-primary">로그인</button>
                             </div>
                         </div>
                     </form>

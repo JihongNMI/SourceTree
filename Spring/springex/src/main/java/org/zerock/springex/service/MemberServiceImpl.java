@@ -26,25 +26,11 @@ public class MemberServiceImpl implements MemberService {
         return loginDTO;
     }
 
-    public boolean register(MemberDTO param) {
-        // DTO를 VO로 변환
-        MemberVO vo = param.convertVO();
-
-        // 아이디 중복 체크
-        MemberVO existingMember = memberMapper.findById(vo.getId());  // DB에서 아이디로 회원 조회
-
-        // 아이디가 이미 존재하면 회원가입 불가
-        if (existingMember != null) {
-            return false;  // 아이디 중복
-        }
-
-        // 새 회원 정보 DB에 저장
-        memberMapper.insertMember(vo);
-
-        return true;  // 회원가입 성공
+    @Override
+    public void joinMember(MemberDTO dto) {
+        MemberVO vo = dto.convertVO();
+        memberMapper.insert(vo);
     }
-
-
 }
 
 

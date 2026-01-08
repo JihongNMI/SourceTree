@@ -42,26 +42,14 @@ public class MemberController {
         session.invalidate();
         return "redirect:/member/login";
     }
-
     @GetMapping("/join")
-    public String join(){
+    public String joinGet(){
         return "member/join";
     }
-
-
-
     @PostMapping("/join")
-    public String join(MemberDTO memberDTO) {
-        // 회원가입 서비스 호출
-        boolean result = memberService.register(memberDTO);
-
-        if (result) {
-
-            return "redirect:/member/login";  // 회원가입 성공 시 로그인 페이지로 리다이렉트
-        } else {
-
-            return "member/join";  // 실패 시 회원가입 페이지로 돌아가며, 메시지 표시
-        }
+    public String joinPost(MemberDTO dto){
+        memberService.joinMember(dto);
+        return "redirect:/member/login";
     }
 }
 
